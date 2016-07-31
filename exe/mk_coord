@@ -2,25 +2,25 @@
 
 require "mk_coord"
 
-eps = 23.43929 * MkCoord::Const::PI / 180.0
-pos_rect = [
+EPS = 23.43929 * MkCoord::Const::PI / 180.0    # 黄道傾斜角(単位: rad)
+# 元の赤道直交座標
+POS = [
    0.99443659220700997281,
   -0.03816291768957833647,
   -0.01655177670960058384
-]
-pos_pol  = [
-   6.24482770879939,
-  -0.016630599800372015
-]
-r = 0.9951686008947793
-p pos_rect
-p pos_pol
-p r
-puts "---"
-p MkCoord.rect_eq2ec(pos_rect, eps)
-p MkCoord.rect_ec2eq(pos_rect, eps)
-p MkCoord.pol_eq2ec(pos_pol, eps)
-p MkCoord.pol_ec2eq(pos_pol, eps)
-p MkCoord.rect2pol(pos_rect)
-p MkCoord.pol2rect(pos_pol, r)
+]  # <= ある日の地球重心から見た太陽重心の位置(単位: AU)
+
+puts "RECT_EQ = #{POS}"
+rect_ec = MkCoord.rect_eq2ec(POS, EPS)
+puts "RECT_EC = #{rect_ec}"
+rect_eq = MkCoord.rect_ec2eq(rect_ec, EPS)
+puts "RECT_EQ = #{rect_eq}"
+*pol_eq, r = MkCoord.rect2pol(rect_eq)
+puts " POL_EQ = #{pol_eq[0, 2]} (R = #{r})"
+pol_ec = MkCoord.pol_eq2ec(pol_eq[0, 2], EPS)
+puts " POL_EC = #{pol_ec[0, 2]}"
+pol_eq = MkCoord.pol_ec2eq(pol_ec, EPS)
+puts " POL_EQ = #{pol_eq[0, 2]}"
+rect_eq = MkCoord.pol2rect(pol_eq[0, 2], r)
+puts "RECT_EQ = #{rect_eq}"
 
