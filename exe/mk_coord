@@ -2,7 +2,6 @@
 
 require "mk_coord"
 
-#PI = 3.141592653589793238462
 eps = 23.43929 * MkCoord::Const::PI / 180.0
 pos_rect = [
    0.99443659220700997281,
