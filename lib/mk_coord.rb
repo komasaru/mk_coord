@@ -43,7 +43,7 @@ module MkCoord
     lambda = Math.atan2(y, x)
     phi    = Math.atan2(z, r)
     lambda %= PI2 if lambda < 0
-    return [lambda, phi]
+    return [lambda, phi, r]
   rescue => e
     raise
   end
