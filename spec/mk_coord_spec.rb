@@ -65,8 +65,8 @@ describe MkCoord do
       subject { described_class.pol2rect(pos_pol, r) }
       it { expect(subject).to match([
         be_within(1.0e-16).of(0.9942990763065704),
-        be_within(1.0e-17).of(0.01653731466084362),
-        be_within(1.0e-17).of(-0.03816291768957855)
+        be_within(1.0e-17).of(0.03815764032143803),
+        be_within(1.0e-18).of(-0.016549487843225463)
       ]) }
     end
   end

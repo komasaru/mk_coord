@@ -51,8 +51,8 @@ module MkCoord
 
   def self.pol2rect(pol, r)
     lambda, phi = pol
-    mtx = r_y(lambda)
-    mtx = r_z(phi, mtx)
+    mtx = r_y(phi)
+    mtx = r_z(lambda, mtx)
     return rotate(mtx, [r, 0.0, 0.0])
   rescue => e
     raise
