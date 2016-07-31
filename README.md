@@ -7,13 +7,13 @@ This is the gem library which converts coordinates.
 ## Computable items
 
 * Rectangular position:
-  - Equator coordinates -> Ecliptic coordinates
-  - Ecliptic coordinates -> Equator coordinates
+  - Equator coordinates -> Ecliptic coordinates (x, y, z)
+  - Ecliptic coordinates -> Equator coordinates (x, y, z)
 * Polar position:
-  - Equator coordinates -> Ecliptic coordinates
-  - Ecliptic coordinates -> Equator coordinates
-* Rectangular coordinates -> Polar coordinates
-* Polar coordinates -> Rectangular coordinates
+  - Equator coordinates -> Ecliptic coordinates (lambda, beta)
+  - Ecliptic coordinates -> Equator coordinates (alpha, delta)
+* Rectangular coordinates -> Polar coordinates (lambda, phi, r)
+* Polar coordinates -> Rectangular coordinates (x, y, z)
 
 ## Installation
 
