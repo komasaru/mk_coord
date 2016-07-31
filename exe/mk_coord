@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+
+require "mk_coord"
+
+#PI = 3.141592653589793238462
+eps = 23.43929 * MkCoord::Const::PI / 180.0
+pos_rect = [
+   0.99443659220700997281,
+  -0.03816291768957833647,
+  -0.01655177670960058384
+]
+pos_pol  = [
+   6.24482770879939,
+  -0.016630599800372015
+]
+r = 0.9951686008947793
+p pos_rect
+p pos_pol
+p r
+puts "---"
+p MkCoord.rect_eq2ec(pos_rect, eps)
+p MkCoord.rect_ec2eq(pos_rect, eps)
+p MkCoord.pol_eq2ec(pos_pol, eps)
+p MkCoord.pol_ec2eq(pos_pol, eps)
+p MkCoord.rect2pol(pos_rect)
+p MkCoord.pol2rect(pos_pol, r)
+
